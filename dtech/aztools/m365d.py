@@ -31,7 +31,7 @@ class XdrRunAhtQuery:
         self.query_text = query_text
 
         # attributes
-        self.query_json = {'query': self.query_text}
+        self.query_json = {"Query": self.query_text}
         self.request_url = 'https://graph.microsoft.com/v1.0/security/runHuntingQuery'
         self.request_headers = {
             'Authorization': f'Bearer {self.oath_token}',
