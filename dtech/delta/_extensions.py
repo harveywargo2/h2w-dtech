@@ -25,7 +25,7 @@ delta_ExtensionDefinitionSMO = stix2.ExtensionDefinition(
     modified="2025-01-01T00:00:00.000Z",
     name="delta",
     description="This extension creates a new SDO that can be used to represent weaknesses (for CWEs).",
-    schema=schema_base+"sdo/x-delta.json",
+    schema=schema_base+"sdo/delta.json",
     version="1.0",
     extension_types=["new-sdo"]
 )
