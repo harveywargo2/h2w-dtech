@@ -4,6 +4,9 @@ from dtech.stix2delta._extensions import delta_ExtensionDefinitionSMO
 
 _type = 'delta'
 @CustomObject(_type, [
+    ('delta', properties.StringProperty()),
+    ('delta_category', properties.StringProperty()),
+    ('delta_meta', properties.ListProperty(properties.StringProperty)),
     ('type', properties.TypeProperty(_type, spec_version='2.1')),
     ('spec_version', properties.StringProperty(fixed='2.1')),
     ('id', properties.IDProperty(_type, spec_version='2.1')),
@@ -14,10 +17,7 @@ _type = 'delta'
     ('description', properties.StringProperty()),
     ('external_references', properties.ListProperty(v21.ExternalReference)),
     ('object_marking_refs', properties.ListProperty(properties.ReferenceProperty(
-        valid_types='marking-definition', spec_version='2.1'))),
-    ('pid', properties.StringProperty()),
-    ('pid_category', properties.StringProperty()),
-    ('pid_meta', properties.ListProperty(properties.StringProperty))
+        valid_types='marking-definition', spec_version='2.1')))
 ], extension_name=delta_ExtensionDefinitionSMO.id)
 class Delta(object):
     pass

@@ -8,10 +8,14 @@ import uuid
 _delta = 'delta--'
 namespace = dt.delta_namespace
 _identity = "identity--" + str(uuid.uuid5(namespace, dt.delta_identity))
+comsvcs_p0001 = 'comsvcs-p0001'
 
-
-delta_pid_comsvcs_0001 = Delta(
-    id=_delta + str(uuid.uuid5(namespace, "pid-comsvcs-0001")),
+delta_comsvcs_p0001 = Delta(
+    delta=comsvcs_p0001,
+    delta_category="single-line-match",
+    delta_meta=[
+    ],
+    id=_delta + str(uuid.uuid5(namespace, comsvcs_p0001)),
     created_by_ref=_identity,
     created="2025-01-01T00:00:00.000Z",
     modified="2025-01-01T00:00:00.000Z",
@@ -48,14 +52,11 @@ delta_pid_comsvcs_0001 = Delta(
         }
     ],
     object_marking_refs=[stix2.TLP_WHITE
-    ],
-    pid="pid-comsvcs-0001",
-    pid_category="single-line-match",
-    pid_meta=[
     ]
 )
 
-indicator_pid_comsvcs_0001 = stix2.Indicator(
+indicator_comsvcs_p0001 = stix2.Indicator(
+    id='indicator--' + str(uuid.uuid5(namespace, comsvcs_p0001)),
     name="Comsvcs.dll Used to Dump LSASS",
     pattern="[process:command_line MATCHES 'comsvcs'] AND [process:command_line MATCHES 'MiniDump']",
     pattern_type='stix',
@@ -63,5 +64,8 @@ indicator_pid_comsvcs_0001 = stix2.Indicator(
     valid_from='2018-01-01T00:00:00.000Z'
 )
 
-print(delta_pid_comsvcs_0001)
-print(indicator_pid_comsvcs_0001)
+
+print(delta_comsvcs_p0001)
+print(indicator_comsvcs_p0001)
+
+# indicator--0875f588-8507-4e66-99c4-0a1b05dcdb06

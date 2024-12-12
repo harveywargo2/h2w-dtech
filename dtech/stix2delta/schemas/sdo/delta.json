@@ -29,18 +29,18 @@
           "type": "string",
           "description": "A description about the x-delta-pattern"
         },
-        "pid": {
+        "delta": {
           "type": "string",
           "description": "The identifier of the delta-pattern"
         },
-        "pid_category": {
+        "delta_category": {
           "type": "string",
           "description": "Category of the delta",
           "enum": [
             "single_line_match"
           ]
         },
-        "pid_meta": {
+        "delta_meta": {
           "type": "array",
           "items": {
             "type": "string"
