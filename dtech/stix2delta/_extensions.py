@@ -30,5 +30,3 @@ delta_ExtensionDefinitionSMO = stix2.ExtensionDefinition(
     extension_types=["new-sdo"]
 )
 
-
-print(delta_ExtensionDefinitionSMO)

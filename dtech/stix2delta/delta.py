@@ -1,5 +1,5 @@
 from stix2 import (CustomObject, properties, utils, v21)
-from _extensions import delta_ExtensionDefinitionSMO
+from dtech.stix2delta._extensions import delta_ExtensionDefinitionSMO
 
 
 _type = 'delta'
