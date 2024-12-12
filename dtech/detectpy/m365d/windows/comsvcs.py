@@ -8,13 +8,13 @@ class Comsvcs:
         self.query_text = None
 
 
-    def dpid_comsvcs_0001(self, kql_ago='1d'):
+    def delta_comsvcs_0001(self, kql_ago='1d'):
 
         self.query_text = f"""DeviceProcessEvents
             | where Timestamp >= ago({kql_ago})
             | where ProcessCommandLine has_all ('comsvcs', 'minidump')
             """
-        self.query_json = {"delta": "dpid-comsvcs-0001",
+        self.query_json = {"delta": "delta-comsvcs-0001",
                            "title": "Comsvcs.dll Created Minidump of Process",
                            "query": self.query_text
         }
@@ -22,7 +22,7 @@ class Comsvcs:
         return self
 
 
-    def dpid_comsvcs_0002(self, kql_ago='1d'):
+    def delta_comsvcs_0002(self, kql_ago='1d'):
 
         self.query_text = f"""DeviceProcessEvents
             | where Timestamp >= ago({kql_ago})
@@ -37,7 +37,7 @@ class Comsvcs:
         return self
 
 
-    def dpid_comsvcs_0003(self, kql_ago='1d'):
+    def delta_comsvcs_0003(self, kql_ago='1d'):
 
         self.query_text = f"""DeviceFileEvents
             | where Timestamp >= ago({kql_ago})
