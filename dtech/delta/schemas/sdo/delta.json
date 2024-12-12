@@ -1,7 +1,7 @@
 {
   "$id": "https://raw.githubusercontent.com/harveywargo2/h2w-dtech/refs/heads/main/dtech/delta/stix21_schemas/sdo/delta.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "x-delta",
+  "title": "delta",
   "description": "This extension creates a new SDO used to represent x-delta objects",
   "type": "object",
   "allof": [
@@ -14,12 +14,12 @@
           "type": "string",
           "description": "The type of this object, which MUST be the literal 'delta'.",
           "enum": [
-            "x-delta"
+            "delta"
           ]
         },
         "id": {
           "title": "id",
-          "pattern": "^x-delta--"
+          "pattern": "^delta--"
         },
         "name": {
           "type": "string",
@@ -29,11 +29,11 @@
           "type": "string",
           "description": "A description about the x-delta-pattern"
         },
-        "x_delta_id": {
+        "pid": {
           "type": "string",
           "description": "The identifier of the delta-pattern"
         },
-        "x_delta_category": {
+        "pid_category": {
           "type": "string",
           "description": "Category of the delta"
         }, ,
