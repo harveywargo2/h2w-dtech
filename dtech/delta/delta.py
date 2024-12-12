@@ -13,6 +13,11 @@ _type = 'delta'
     ('name', properties.StringProperty(required=True)),
     ('description', properties.StringProperty()),
     ('external_references', properties.ListProperty(v21.ExternalReference)),
+    ('object_marking_refs', properties.ListProperty(properties.ReferenceProperty(
+        valid_types='marking-definition', spec_version='2.1'))),
+    ('pid', properties.StringProperty()),
+    ('pid_category', properties.StringProperty()),
+    ('pid_meta', properties.ListProperty(properties.StringProperty))
 ], extension_name=delta_ExtensionDefinitionSMO.id)
 class Delta(object):
     pass
